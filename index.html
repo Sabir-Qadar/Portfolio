@@ -66,6 +66,9 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .btn-ghost2{background:transparent;color:var(--muted);border:1px solid var(--border);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
 .btn-ghost2::before{background:var(--muted)}
 .btn-ghost2:hover{color:#000}
+.btn-purple{background:transparent;color:var(--c3);border:1px solid var(--c3);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px))}
+.btn-purple::before{background:var(--c3)}
+.btn-purple:hover{color:#fff;box-shadow:0 0 30px rgba(123,47,190,.4)}
 
 /* SECTION */
 section{padding:90px 40px;max-width:1000px;margin:0 auto;position:relative;z-index:1}
@@ -95,26 +98,43 @@ section{padding:90px 40px;max-width:1000px;margin:0 auto;position:relative;z-ind
 .stat-mini-num{font-family:var(--orb);font-size:26px;font-weight:900;line-height:1}
 .stat-mini-label{font-family:var(--mono);font-size:9px;color:var(--muted);margin-top:4px;letter-spacing:.1em}
 
-/* PROJECT */
+/* PROJECTS GRID */
+.projects-grid{display:flex;flex-direction:column;gap:32px}
+
+/* PROJECT HUD */
 .project-hud{border:1px solid rgba(0,245,255,.2);background:var(--panel);position:relative;clip-path:polygon(0 0,calc(100% - 24px) 0,100% 24px,100% 100%,24px 100%,0 calc(100% - 24px));padding:40px;transition:border-color .3s,box-shadow .3s}
 .project-hud:hover{border-color:rgba(0,245,255,.5);box-shadow:0 0 60px rgba(0,245,255,.06),inset 0 0 60px rgba(0,245,255,.02)}
+.project-hud.ai-project{border-color:rgba(123,47,190,.25)}
+.project-hud.ai-project:hover{border-color:rgba(123,47,190,.6);box-shadow:0 0 60px rgba(123,47,190,.08),inset 0 0 60px rgba(123,47,190,.02)}
+.project-hud.ai-project .corner-deco.tl,.project-hud.ai-project .corner-deco.tr,.project-hud.ai-project .corner-deco.bl,.project-hud.ai-project .corner-deco.br{border-color:var(--c3)}
+.project-hud.ai-project .p-corner-label{color:var(--c3)}
+.project-hud.ai-project .pf-bar{background:var(--c3);box-shadow:0 0 6px var(--c3)}
 .p-corner-label{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.15em;margin-bottom:20px;text-transform:uppercase}
 .p-icon-row{display:flex;align-items:center;gap:16px;margin-bottom:20px}
 .p-icon-box{width:52px;height:52px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:24px;background:rgba(0,245,255,.05);clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px))}
+.p-icon-box.ai{background:rgba(123,47,190,.08);border-color:rgba(123,47,190,.2)}
 .p-name{font-family:var(--orb);font-size:26px;font-weight:700;color:#fff;text-shadow:0 0 20px rgba(255,255,255,.1)}
 .p-type{font-family:var(--mono);font-size:10px;color:var(--c2);letter-spacing:.2em;text-transform:uppercase;margin-top:4px}
+.p-type.ai-type{color:var(--c3)}
 .p-desc{font-size:15px;color:var(--muted);line-height:1.75;margin-bottom:24px;max-width:560px}
 .tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
 .tag{font-family:var(--mono);font-size:10px;padding:5px 12px;background:transparent;border:1px solid rgba(0,245,255,.2);color:var(--c1);letter-spacing:.08em;clip-path:polygon(0 0,calc(100% - 6px) 0,100% 6px,100% 100%,6px 100%,0 calc(100% - 6px))}
+.tag.ai-tag{border-color:rgba(123,47,190,.3);color:var(--c3)}
 .p-features{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:32px}
 .pf{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;color:var(--muted)}
 .pf-bar{width:3px;height:16px;background:var(--c1);flex-shrink:0;box-shadow:0 0 6px var(--c1)}
-.p-actions{display:flex;gap:12px}
+.p-actions{display:flex;gap:12px;flex-wrap:wrap}
 .corner-deco{position:absolute;width:16px;height:16px}
 .corner-deco.tl{top:0;left:0;border-top:2px solid var(--c1);border-left:2px solid var(--c1)}
 .corner-deco.tr{top:0;right:0;border-top:2px solid var(--c1);border-right:2px solid var(--c1)}
 .corner-deco.bl{bottom:0;left:0;border-bottom:2px solid var(--c1);border-left:2px solid var(--c1)}
 .corner-deco.br{bottom:0;right:0;border-bottom:2px solid var(--c1);border-right:2px solid var(--c1)}
+
+/* AI project stat strip */
+.p-stat-strip{display:flex;gap:24px;margin-bottom:28px;padding:14px 18px;border:1px solid rgba(123,47,190,.15);background:rgba(123,47,190,.04);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%)}
+.p-stat{display:flex;flex-direction:column;gap:2px}
+.p-stat-val{font-family:var(--orb);font-size:18px;font-weight:700;color:var(--c3);text-shadow:0 0 12px rgba(123,47,190,.4)}
+.p-stat-key{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
 
 /* SKILLS */
 .skills-terminal{border:1px solid var(--border);background:var(--bg2);overflow:hidden;clip-path:polygon(0 0,calc(100% - 20px) 0,100% 20px,100% 100%,0 100%)}
@@ -141,6 +161,7 @@ section{padding:90px 40px;max-width:1000px;margin:0 auto;position:relative;z-ind
 .bar-vs{background:linear-gradient(90deg,rgba(0,245,255,.3),var(--c1))}
 .bar-lx{background:linear-gradient(90deg,rgba(255,0,110,.2),var(--c2))}
 .bar-oop{background:linear-gradient(90deg,rgba(123,47,190,.3),#7B2FBE)}
+.bar-ml{background:linear-gradient(90deg,rgba(123,47,190,.3),#7B2FBE)}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
@@ -175,6 +196,7 @@ footer{border-top:1px solid var(--border);padding:26px 40px;display:flex;align-i
   .contact-grid{grid-template-columns:1fr}
   .term-body{grid-template-columns:1fr}
   .p-features{grid-template-columns:1fr}
+  .p-stat-strip{flex-wrap:wrap;gap:16px}
   footer{flex-direction:column;gap:10px;text-align:center}
 }
 </style>
@@ -215,9 +237,7 @@ footer{border-top:1px solid var(--border);padding:26px 40px;display:flex;align-i
   <div class="hero-ctas">
     <a href="#projects" class="btn btn-cyber"><span>EXPLORE WORK →</span></a>
     <a href="#contact" class="btn btn-cyber2"><span>MAKE CONTACT</span></a>
-   <a href="resume.pdf" download target="_blank" class="btn btn-ghost2">
-  <span>⬇ DOWNLOAD RESUME</span>
-</a>
+    <a href="resume.pdf" download target="_blank" class="btn btn-ghost2"><span>⬇ DOWNLOAD RESUME</span></a>
   </div>
 </div>
 
@@ -255,8 +275,8 @@ footer{border-top:1px solid var(--border);padding:26px 40px;display:flex;align-i
           <div class="stat-mini-label">SEMESTER</div>
         </div>
         <div class="stat-mini">
-          <div class="stat-mini-num" style="color:var(--c2);text-shadow:0 0 20px rgba(255,0,110,.5)">1</div>
-          <div class="stat-mini-label">PROJECT LIVE</div>
+          <div class="stat-mini-num" style="color:var(--c2);text-shadow:0 0 20px rgba(255,0,110,.5)">2</div>
+          <div class="stat-mini-label">PROJECTS LIVE</div>
         </div>
         <div class="stat-mini">
           <div class="stat-mini-num" style="color:var(--c4);text-shadow:0 0 20px rgba(255,229,0,.4)">3+</div>
@@ -276,42 +296,109 @@ footer{border-top:1px solid var(--border);padding:26px 40px;display:flex;align-i
 <!-- PROJECTS -->
 <section id="projects" class="reveal">
   <div class="sec-label">02 &nbsp; DEPLOYMENTS</div>
-  <div class="sec-title">Featured <span class="hl">Project</span></div>
-  <div class="project-hud">
-    <div class="corner-deco tl"></div>
-    <div class="corner-deco tr"></div>
-    <div class="corner-deco bl"></div>
-    <div class="corner-deco br"></div>
-    <div class="p-corner-label">PROJECT_001 // CYBERSECURITY // ACTIVE</div>
-    <div class="p-icon-row">
-      <div class="p-icon-box">🔐</div>
-      <div>
-        <div class="p-name">PORT SCANNER</div>
-        <div class="p-type">Network Reconnaissance Tool</div>
+  <div class="sec-title">Featured <span class="hl">Projects</span></div>
+
+  <div class="projects-grid">
+
+    <!-- PROJECT 001 — PORT SCANNER -->
+    <div class="project-hud">
+      <div class="corner-deco tl"></div>
+      <div class="corner-deco tr"></div>
+      <div class="corner-deco bl"></div>
+      <div class="corner-deco br"></div>
+      <div class="p-corner-label">PROJECT_001 // CYBERSECURITY // ACTIVE</div>
+      <div class="p-icon-row">
+        <div class="p-icon-box">🔐</div>
+        <div>
+          <div class="p-name">PORT SCANNER</div>
+          <div class="p-type">Network Reconnaissance Tool</div>
+        </div>
+      </div>
+      <p class="p-desc">
+        A command-line cybersecurity tool that scans open ports on a target system to identify active services and potential security vulnerabilities. Built to deepen understanding of how systems communicate over networks — and how attackers map attack surfaces before striking.
+      </p>
+      <div class="tags">
+        <span class="tag">C</span>
+        <span class="tag">PYTHON</span>
+        <span class="tag">NETWORKING</span>
+        <span class="tag">CLI TOOL</span>
+        <span class="tag">CYBERSECURITY</span>
+        <span class="tag">RECON</span>
+      </div>
+      <div class="p-features">
+        <div class="pf"><span class="pf-bar"></span>Scans configurable port ranges</div>
+        <div class="pf"><span class="pf-bar"></span>Detects open vs closed ports</div>
+        <div class="pf"><span class="pf-bar"></span>Identifies active services on host</div>
+        <div class="pf"><span class="pf-bar"></span>Teaches core network security concepts</div>
+      </div>
+      <div class="p-actions">
+        <a href="https://github.com/Sabir-Qadar/port-scanner-python/blob/main/port_scanner.py" class="btn btn-cyber"><span>VIEW ON GITHUB ↗</span></a>
+        <a href="https://github.com/Sabir-Qadar/port-scanner-python/blob/main/README.md" class="btn btn-ghost2"><span>README.MD</span></a>
       </div>
     </div>
-    <p class="p-desc">
-      A command-line cybersecurity tool that scans open ports on a target system to identify active services and potential security vulnerabilities. Built to deepen understanding of how systems communicate over networks — and how attackers map attack surfaces before striking.
-    </p>
-    <div class="tags">
-      <span class="tag">C</span>
-      <span class="tag">PYTHON</span>
-      <span class="tag">NETWORKING</span>
-      <span class="tag">CLI TOOL</span>
-      <span class="tag">CYBERSECURITY</span>
-      <span class="tag">RECON</span>
+
+    <!-- PROJECT 002 — SENTIENT -->
+    <div class="project-hud ai-project">
+      <div class="corner-deco tl"></div>
+      <div class="corner-deco tr"></div>
+      <div class="corner-deco bl"></div>
+      <div class="corner-deco br"></div>
+      <div class="p-corner-label">PROJECT_002 // MACHINE LEARNING // ACTIVE</div>
+      <div class="p-icon-row">
+        <div class="p-icon-box ai">🧠</div>
+        <div>
+          <div class="p-name">SENTIENT</div>
+          <div class="p-type ai-type">AI Sentiment Analyzer</div>
+        </div>
+      </div>
+      <p class="p-desc">
+        A full-stack NLP web application that classifies Amazon product reviews as positive or negative in real time. Raw text is cleaned, stemmed, and vectorized with TF-IDF before being scored by a Naive Bayes model — all served through a production-grade Flask UI with live confidence scoring and probability charts.
+      </p>
+
+      <!-- stat strip -->
+      <div class="p-stat-strip">
+        <div class="p-stat">
+          <span class="p-stat-val">400K</span>
+          <span class="p-stat-key">Training Samples</span>
+        </div>
+        <div class="p-stat">
+          <span class="p-stat-val">3,000</span>
+          <span class="p-stat-key">TF-IDF Features</span>
+        </div>
+        <div class="p-stat">
+          <span class="p-stat-val">NB</span>
+          <span class="p-stat-key">Best Model</span>
+        </div>
+        <div class="p-stat">
+          <span class="p-stat-val">REST</span>
+          <span class="p-stat-key">API Endpoint</span>
+        </div>
+      </div>
+
+      <div class="tags">
+        <span class="tag ai-tag">PYTHON</span>
+        <span class="tag ai-tag">FLASK</span>
+        <span class="tag ai-tag">SCIKIT-LEARN</span>
+        <span class="tag ai-tag">NLTK</span>
+        <span class="tag ai-tag">TF-IDF</span>
+        <span class="tag ai-tag">NAIVE BAYES</span>
+        <span class="tag ai-tag">NLP</span>
+        <span class="tag ai-tag">CHART.JS</span>
+      </div>
+      <div class="p-features">
+        <div class="pf"><span class="pf-bar"></span>Dual-model training pipeline</div>
+        <div class="pf"><span class="pf-bar"></span>Real-time confidence scoring</div>
+        <div class="pf"><span class="pf-bar"></span>REST API with JSON response</div>
+        <div class="pf"><span class="pf-bar"></span>Live probability doughnut chart</div>
+        <div class="pf"><span class="pf-bar"></span>Porter stemmer preprocessing</div>
+        <div class="pf"><span class="pf-bar"></span>Training analytics &amp; ROC curve</div>
+      </div>
+      <div class="p-actions">
+        <a href="https://github.com/Sabir-Qadar" target="_blank" class="btn btn-purple"><span>VIEW ON GITHUB ↗</span></a>
+        <a href="https://github.com/Sabir-Qadar" target="_blank" class="btn btn-ghost2"><span>README.MD</span></a>
+      </div>
     </div>
-    <div class="p-features">
-      <div class="pf"><span class="pf-bar"></span>Scans configurable port ranges</div>
-      <div class="pf"><span class="pf-bar"></span>Detects open vs closed ports</div>
-      <div class="pf"><span class="pf-bar"></span>Identifies active services on host</div>
-      <div class="pf"><span class="pf-bar"></span>Teaches core network security concepts</div>
-    </div>
-    <div class="p-actions">
-    
-      <a href="https://github.com/Sabir-Qadar/port-scanner-python/blob/main/port_scanner.py" class="btn btn-cyber"><span>VIEW ON GITHUB ↗</span></a>
-      <a href="https://github.com/Sabir-Qadar/port-scanner-python/blob/main/README.md" class="btn btn-ghost2"><span>README.MD</span></a>
-    </div>
+
   </div>
 </section>
 
@@ -387,8 +474,8 @@ footer{border-top:1px solid var(--border);padding:26px 40px;display:flex;align-i
           <div class="skill-bar-track"><div class="skill-bar-fill bar-sec" data-width="35"></div></div>
         </div>
         <div class="skill-row">
-          <div class="skill-row-top"><span class="skill-row-name">Port Scanning / Recon</span><span class="skill-row-lvl2" style="color:var(--c1)">BUILDING</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill bar-c" data-width="42"></div></div>
+          <div class="skill-row-top"><span class="skill-row-name">Machine Learning / NLP</span><span class="skill-row-lvl2" style="color:var(--c3)">BUILDING</span></div>
+          <div class="skill-bar-track"><div class="skill-bar-fill bar-ml" data-width="40"></div></div>
         </div>
         <div class="skill-row">
           <div class="skill-row-top"><span class="skill-row-name">Network Security</span><span class="skill-row-lvl2" style="color:var(--c2)">BEGINNER</span></div>
@@ -414,11 +501,9 @@ footer{border-top:1px solid var(--border);padding:26px 40px;display:flex;align-i
         <a href="mailto:sabirqadar@gmail.com" class="c-link">
           <span class="c-link-icon">@</span>sabirqadar@gmail.com
         </a>
-        
         <a href="https://github.com/Sabir-Qadar" target="_blank" class="c-link">
           <span class="c-link-icon">GH</span>github.com/sabirqadar
         </a>
-      
         <a href="https://www.linkedin.com/in/sabir-qadar/" target="_blank" class="c-link">
           <span class="c-link-icon">LI</span>linkedin.com/in/sabirqadar
         </a>
@@ -453,6 +538,7 @@ const roles = [
   'Cybersecurity Enthusiast_',
   'DSA in C — Active Learner_',
   'OOP in Java — Building Strong Bases_',
+  'ML / NLP — Building Real Projects_',
   'Aspiring Software Developer_'
 ];
 let ri = 0, ci = 0, del = false;
@@ -490,8 +576,6 @@ const barObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 document.querySelectorAll('#skills-terminal').forEach(t => barObs.observe(t));
-
-
 </script>
 </body>
 </html>
